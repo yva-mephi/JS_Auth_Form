@@ -1,0 +1,428 @@
+/* Основные стили */
+body {
+    font-family: 'Rubik', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(115deg, #004ff9, #000000);
+}
+
+.form-wrapper {
+    position: absolute;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 0;
+}
+
+
+.background-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.circle {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(115deg, #6228d7, #ee2a7b, #f9ce34);
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: -50px;
+}
+
+.circle1 {
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(115deg, #f9ce34, #ee2a7b, #6228d7);
+    border-radius: 50%;
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+}
+
+.line {
+    width: 800px;
+    height: 4px;
+    background: linear-gradient(115deg, #f9ce34, #ee2a7b, #6228d7);
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-40%, -40%) rotate(135deg);
+}
+
+.line1 {
+    width: 800px;
+    height: 4px;
+    background: linear-gradient(115deg, #f9ce34, #ee2a7b, #6228d7);
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%) rotate(135deg);
+}
+
+.line2 {
+    width: 800px;
+    height: 4px;
+    background: linear-gradient(115deg, #f9ce34, #ee2a7b, #6228d7);
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-60%, -50%) rotate(135deg);
+}
+
+.form-container {
+    margin-left: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    width: 300px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+[type="checkbox"] {
+    display: none;
+}
+
+label {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 40px;
+    background-color: rgba(106, 105, 107, 0.322);
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+.toggle {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 50%;
+    height: 36px;
+    background-color: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.names {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: bold;
+    user-select: none;
+}
+
+.auth,
+.reg {
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+[type="checkbox"]:checked+label .toggle {
+    transform: translateX(100%);
+}
+
+[type="checkbox"]:checked+label .auth {
+    opacity: 0.5;
+}
+
+[type="checkbox"]:checked+label .reg {
+    opacity: 1;
+}
+
+[type="checkbox"]:not(:checked)+label .auth {
+    opacity: 1;
+}
+
+[type="checkbox"]:not(:checked)+label .reg {
+    opacity: 0.5;
+}
+
+.form {
+    display: none;
+    transition: opacity 0.5s ease, height 0.5s ease;
+}
+
+#login-form {
+    display: block;
+}
+
+[type="checkbox"]:checked~#login-form {
+    display: none;
+}
+
+[type="checkbox"]:checked~#register-form {
+    display: block;
+}
+
+.form h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+.forgot {
+    display: block;
+    width: 100%;
+    text-align: right;
+    margin-bottom: 1rem;
+    color: #fec163;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.forgot:hover {
+    text-decoration: underline;
+    color: #de4313;
+}
+
+.social-auth {
+    margin-top: 1.5rem;
+    /* Отступ сверху */
+    text-align: center;
+}
+
+.social-auth p {
+    margin-bottom: 0.5rem;
+    font-size: 14px;
+    color: #666;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+
+.form input .name {
+    width: 50%;
+}
+
+.form button {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(115deg, #fab2ff, #1904e5);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.form button:active {
+    color: white;
+    box-shadow: 0 0.2rem #ffffff;
+    transform: translateY(0.2rem);
+}
+
+.form button:hover:not(:disabled) {
+    background: linear-gradient(115deg, #79377e, #0f037e);
+    color: white;
+    text-shadow: 0 0.1rem #ffffff;
+}
+
+.form button:disabled {
+    cursor: auto;
+    color: grey;
+}
+
+#birth-label,
+#gender,
+#male,
+#female {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.date-of-birth {
+    margin-bottom: 1rem;
+}
+
+.date-of-birth label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.date-fields {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.gender {
+    margin-bottom: 1rem;
+}
+
+.gender label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.gender-options {
+    display: flex;
+    gap: 1rem;
+}
+
+.gender-options label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.gender-options input[type="radio"] {
+    width: 25px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.custom-select {
+    position: relative;
+    flex: 1;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    background-color: #fff;
+    padding: 8px;
+    font-size: 14px;
+}
+
+.selected {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.selected::after {
+    content: "▼";
+    font-size: 12px;
+    color: #666;
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: transform 0.3s ease;
+}
+
+.custom-select.open .selected::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: 150px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    display: none;
+    z-index: 10;
+    margin-top: 5px;
+}
+
+.option {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.option:hover {
+    background-color: #f0f0f0;
+}
+
+/* Стили для скроллбара */
+.options::-webkit-scrollbar {
+    width: 8px;
+}
+
+.options::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+.options::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+}
+
+#google-auth,
+#yandex-auth,
+#vk-auth,
+#mailru-auth,
+#outlook-auth,
+#yahoo-auth,
+#icloud-auth {
+    padding: 0px;
+    display: inline-block;
+    width: 40px;
+    /* Размер иконок */
+    height: 40px;
+    border-radius: 10px;
+    /* Круглые иконки */
+    background-color: #f0f0f028;
+    /* Фон иконок */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    /* Плавное изменение фона */
+}
+
+#google-auth:hover,
+#yandex-auth:hover,
+#vk-auth:hover,
+#mailru-auth:hover,
+#outlook-auth:hover,
+#yahoo-auth:hover,
+#icloud-auth:hover {
+    /* background-color: #007bff; */
+    background: linear-gradient(115deg, #fec163, #de4313);
+    /* Цвет фона при наведении */
+}
+
+.social-icon img {
+    width: 24px;
+    /* Размер иконки внутри */
+    height: 24px;
+    /* filter: brightness(0) invert(0); */
+    /* Черные иконки */
+    transition: filter 0.3s ease;
+    /* Плавное изменение цвета иконки */
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация / Регистрация</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="form-wrapper">
+        <div class="background-elements">
+            <div class="circle"></div>
+            <div class="circle1"></div>
+            <div class="line"></div>
+            <div class="line1"></div>
+            <div class="line2"></div>
+        </div>
+        <div class="form-container">
+            <!-- Переключатель -->
+            <input type="checkbox" id="switch">
+            <label for="switch">
+                <div class="toggle"></div>
+                <div class="names">
+                    <p class="auth">Авторизация</p>
+                    <p class="reg">Регистрация</p>
+                </div>
+            </label>
+
+            <!-- Форма авторизации -->
+            <form id="login-form" class="form">
+                <h2>Авторизация</h2>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Пароль" required>
+                <a href="./forgot-password.html" class="forgot">Забыли пароль?</a>
+                <button type="submit">Войти</button>
+
+                    <!-- Блок для авторизации через сторонние сервисы -->
+                <div class="social-auth">
+                    <p>Или войдите через:</p>
+                    <div class="social-icons">
+                         <button id="google-auth" class="social-icon" type="button"><img src="../assets/gmail.svg" alt="Gmail"></button>
+                         <button id="yandex-auth" class="social-icon"><img src="../assets/ya.svg" alt="Yandex"></button>
+                         <button id="mailru-auth" class="social-icon"><img src="../assets/mail.svg" alt="Mail"></button>
+                         <button id="vk-auth" class="social-icon"><img src="../assets/vk.svg" alt="VK"></button>
+                         <button id="outlook-auth" class="social-icon"><img src="../assets/outlook.svg" alt="Outlook"></button>
+                         <button id="yahoo-auth" class="social-icon"><img src="../assets/yahoo.svg" alt="Yahoo"></button>
+                         <button id="icloud-auth" class="social-icon"><img src="../assets/icloud.svg" alt="iCloud"></button>
+                    </div>
+                </div>
+            </form>
+
+            <!-- Форма регистрации -->
+            <form id="register-form" class="form">
+                <input type="hidden" name="isUpdate" value="false">
+                <h2>Регистрация</h2>
+                <input type="text" placeholder="Имя" class="name" name="first_name" required>
+                <input type="text" placeholder="Фамилия" class="surname" name="last_name" required>
+                <div class="date-of-birth">
+                    <label id="birth-label">Дата рождения:</label>
+                    <div class="date-fields">
+                        <!-- Кастомный список для дня -->
+                        <div class="custom-select">
+                            <div class="selected" id="DAY">День</div>
+                            <div class="options">
+                                <div class="option" data-value="">День</div>
+                                <script>
+                                    for (let i = 1; i <= 31; i++) {
+                                        document.write(`<div class="option" data-value="${i}">${i}</div>`);
+                                    }
+                                </script>
+                            </div>
+                        </div>
+
+                        <!-- Кастомный список для месяца -->
+                        <div class="custom-select">
+                            <div class="selected" id="MONTH">Месяц</div>
+                            <div class="options">
+                                <div class="option" data-value="">Месяц</div>
+                                <div class="option" data-value="1">Январь</div>
+                                <div class="option" data-value="2">Февраль</div>
+                                <div class="option" data-value="3">Март</div>
+                                <div class="option" data-value="4">Апрель</div>
+                                <div class="option" data-value="5">Май</div>
+                                <div class="option" data-value="6">Июнь</div>
+                                <div class="option" data-value="7">Июль</div>
+                                <div class="option" data-value="8">Август</div>
+                                <div class="option" data-value="9">Сентябрь</div>
+                                <div class="option" data-value="10">Октябрь</div>
+                                <div class="option" data-value="11">Ноябрь</div>
+                                <div class="option" data-value="12">Декабрь</div>
+                            </div>
+                        </div>
+
+                        <!-- Кастомный список для года -->
+                        <div class="custom-select">
+                            <div class="selected" id="YEAR">Год</div>
+                            <div class="options">
+                                <div class="option" data-value="">Год</div>
+                                <script>
+                                    const currentYear = new Date().getFullYear();
+                                    for (let i = currentYear; i >= 1900; i--) {
+                                        document.write(`<div class="option" data-value="${i}">${i}</div>`);
+                                    }
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Чекбокс для пола -->
+                <div class="gender">
+                    <label id="gender">Пол:</label>
+                    <div class="gender-options">
+                        <label id="male">
+                            <input type="radio" id="male-input" name="gender" value="male" required> Мужской
+                        </label>
+                        <label id="female">
+                            <input type="radio" id="female-input" name="gender" value="female" required> Женский
+                        </label>
+                    </div>
+                </div>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Пароль" required>
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+        </div>
+    </div>
+    <script type="module" src="./index.js"></script>
+</body>
+</html>
