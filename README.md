@@ -7,6 +7,10 @@
 **Frontend**: Bun, Vite, JS, CSS, HTML  
 **Backend**: Bun, NodeJS, Docker, PostgreSQL
 
+![Auth2](https://github.com/user-attachments/assets/d6edcc4d-23bd-450b-a785-b485ae7d7026)
+![Auth](https://github.com/user-attachments/assets/0ea8fbe0-6b5e-4fb7-b821-dc2aa08454a5)
+
+
 ## Как поднять сервер?
 
 1. Создать файл `.env` в корне проекта, со следующим содержимым:
