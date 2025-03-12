@@ -1,4 +1,3 @@
-/* Основные стили */
 body {
     font-family: 'Rubik', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     margin: 0;
@@ -368,7 +367,6 @@ label {
     background-color: #f0f0f0;
 }
 
-/* Стили для скроллбара */
 .options::-webkit-scrollbar {
     width: 8px;
 }
@@ -384,7 +382,7 @@ label {
 
 #google-auth,
 #yandex-auth,
-#vk-auth,
+#github-auth,
 #mailru-auth,
 #outlook-auth,
 #yahoo-auth,
@@ -392,37 +390,27 @@ label {
     padding: 0px;
     display: inline-block;
     width: 40px;
-    /* Размер иконок */
     height: 40px;
     border-radius: 10px;
-    /* Круглые иконки */
     background-color: #f0f0f028;
-    /* Фон иконок */
     display: flex;
     align-items: center;
     justify-content: center;
     transition: background-color 0.3s ease;
-    /* Плавное изменение фона */
 }
 
 #google-auth:hover,
 #yandex-auth:hover,
-#vk-auth:hover,
+#github-auth:hover,
 #mailru-auth:hover,
 #outlook-auth:hover,
 #yahoo-auth:hover,
 #icloud-auth:hover {
-    /* background-color: #007bff; */
     background: linear-gradient(115deg, #fec163, #de4313);
-    /* Цвет фона при наведении */
 }
 
 .social-icon img {
-    width: 24px;
-    /* Размер иконки внутри */
-    height: 24px;
-    /* filter: brightness(0) invert(0); */
-    /* Черные иконки */
+    width: 27px;
+    height: 27px;
     transition: filter 0.3s ease;
-    /* Плавное изменение цвета иконки */
 }
