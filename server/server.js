@@ -4,6 +4,9 @@ import querystring from 'querystring';
 import authRoutes from './routes/authRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import googleAuthRoutes from './routes/googleRoutes.js';
+import yandexAuthRoutes from './routes/yandexRoutes.js';
+import mailruAuthRoutes from './routes/mailruRoutes.js';
+import githubAuthRoutes from './routes/githubRoutes.js';
 
 const server = createServer(async (req, res) => {
     const { pathname, query } = url.parse(req.url);
@@ -31,6 +34,18 @@ const server = createServer(async (req, res) => {
         case '/auth/google':
         case process.env.GOOGLE_CALLBACK:
             await googleAuthRoutes(req, res, pathname, params);
+            break;
+        case '/auth/yandex':
+        case process.env.YANDEX_REDIRECT_URI:
+            await yandexAuthRoutes(req, res, pathname, params);
+            break;
+        case '/auth/mailru':
+        case process.env.MAILRU_REDIRECT_URI:
+            await mailruAuthRoutes(req, res, pathname, params);
+            break;
+        case '/auth/github':
+        case process.env.GITHUB_REDIRECT_URI:
+            await githubAuthRoutes(req, res, pathname, params);
             break;
         default:
             res.statusCode = 404;

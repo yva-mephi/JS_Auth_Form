@@ -11,6 +11,7 @@ services:
       - "7000:5432"  # Порт 7000 на хосте, 5432 в контейнере
     volumes:
       - postgres_data:/var/lib/postgresql/data
+      - ./server/init.sql:/docker-entrypoint-initdb.d/init.sql
 
   server:
     build: ./server
